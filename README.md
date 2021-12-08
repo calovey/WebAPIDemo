@@ -1,4 +1,3 @@
 # WebAPIDemo
 
-Asp.net Web API with React in front-end 
-For Database using MongoDB
+Asp.net 5.0 Web API with React & MongoDB with AZURE cluster
