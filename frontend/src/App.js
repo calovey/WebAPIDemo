@@ -4,7 +4,7 @@ import './App.css';
 import {Home} from './Home';
 import {Store} from './Store';
 import {Employee} from './Employee';
-import {Navigation} from './Navigation';
+//import {Navigation} from './Navigation';
 import {BrowserRouter, Route, Switch,NavLink} from 'react-router-dom';
 
 function App() {
