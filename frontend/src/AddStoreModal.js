@@ -32,20 +32,17 @@ export class AddStoreModal extends Component {
     render() {
         return (
             <div className="container">
-
                 <Modal
                     {...this.props}
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
-                    centered
-                >
+                    centered>
                     <Modal.Header>
                         <Modal.Title id="contained-modal-title-vcenter">
                             Add New Store
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
@@ -54,7 +51,7 @@ export class AddStoreModal extends Component {
                                         <Form.Control type="text" name="StoreName" required
                                             placeholder="Store Name" />
                                     </Form.Group>
-                                    <br/>
+                                    <br />
                                     <Form.Group>
                                         <Button variant="success" type="submit">
                                             Add
@@ -64,15 +61,11 @@ export class AddStoreModal extends Component {
                             </Col>
                         </Row>
                     </Modal.Body>
-
                     <Modal.Footer>
                         <Button variant="danger" onClick={this.props.onHide}>Close</Button>
                     </Modal.Footer>
-
                 </Modal>
-
             </div>
         )
     }
-
 }
