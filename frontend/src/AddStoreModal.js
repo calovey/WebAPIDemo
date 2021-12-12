@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button, Row, Col, Form } from 'react-bootstrap';
-
+import 'react-responsive-modal/styles.css';
 export class AddStoreModal extends Component {
     constructor(props) {
         super(props);
@@ -9,23 +9,24 @@ export class AddStoreModal extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        fetch(process.env.REACT_APP_API + 'store', {
+        fetch(process.env.REACT_APP_API + 'Store', {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Accept': '*/*',
+                'Content-Type': 'application/json',
+                'Accept-Encoding': 'gzip, deflate, br'
             },
+            //mode: 'no-cors',
             body: JSON.stringify({
-                StoreId: null,
-                StoreName: event.target.StoreName.value
+                storeName: event.target.StoreName.value
             })
         })
             .then(res => res.json())
-            .then((result) => {
-                alert(result);
+            .then((data) => {
+                alert(data);
             },
                 (error) => {
-                    alert('Failed');
+                    alert(error);
                 })
     }
     render() {
@@ -38,9 +39,9 @@ export class AddStoreModal extends Component {
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                 >
-                    <Modal.Header clooseButton>
+                    <Modal.Header>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            Add Store
+                            Add New Store
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -49,14 +50,14 @@ export class AddStoreModal extends Component {
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlId="StoreName">
-                                        <Form.Label>StoreName</Form.Label>
+                                        <Form.Label>Store Name</Form.Label>
                                         <Form.Control type="text" name="StoreName" required
-                                            placeholder="StoreName" />
+                                            placeholder="Store Name" />
                                     </Form.Group>
-
+                                    <br/>
                                     <Form.Group>
-                                        <Button variant="primary" type="submit">
-                                            Add Store
+                                        <Button variant="success" type="submit">
+                                            Add
                                         </Button>
                                     </Form.Group>
                                 </Form>

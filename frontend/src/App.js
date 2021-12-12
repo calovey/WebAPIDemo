@@ -5,23 +5,41 @@ import {Home} from './Home';
 import {Store} from './Store';
 import {Employee} from './Employee';
 import {Navigation} from './Navigation';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch,NavLink} from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
-    <div className="container">
-     <h3 className="m-3 d-flex justify-content-center">
-       React JS Tutorial
-     </h3>
+    <div className="App container">
+      <h3 className="d-flex justify-content-center m-3">
+        React JS Frontend
+      </h3>
+        
+      <nav className="navbar navbar-expand-sm bg-light navbar-dark">
+        <ul className="navbar-nav">
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/Home">
+              Home
+            </NavLink>
+          </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/Store">
+              Store
+            </NavLink>
+          </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/Employee">
+              Employee
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
 
-     <Navigation/>
-
-     <Switch>
-       <Route path='/' component={Home} exact/>
-       <Route path='/store' component={Store}/>
-       <Route path='/employee' component={Employee}/>
-     </Switch>
+      <Switch>
+        <Route path='/Home' component={Home}/>
+        <Route path='/Store' component={Store}/>
+        <Route path='/Employee' component={Employee}/>
+      </Switch>
     </div>
     </BrowserRouter>
   );
