@@ -57,14 +57,14 @@ export class EditStoreModal extends Component {
                                             defaultValue={this.props.storeid}
                                             placeholder="Store ID" />
                                     </Form.Group>
-
+                                    <br />
                                     <Form.Group controlId="StoreName">
                                         <Form.Label>Store Name</Form.Label>
                                         <Form.Control type="text" name="StoreName" required
                                             defaultValue={this.props.storename}
                                             placeholder="Store Name" />
                                     </Form.Group>
-
+                                    <br />
                                     <Form.Group>
                                         <Button variant="primary" type="submit">
                                             Update Store
